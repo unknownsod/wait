@@ -383,6 +383,7 @@
             padding-top: calc(20px + env(safe-area-inset-top, 0px));
             padding-bottom: calc(20px + env(safe-area-inset-bottom, 20px));
             text-align: center;
+            overflow-y: auto;
         }
 
         .greeting-screen.show {
@@ -408,6 +409,7 @@
             text-shadow: 3px 3px 0 gold, 5px 5px 0 rgba(255, 255, 255, 0.6);
             margin-bottom: 2rem;
             animation: bounce 1s ease infinite;
+            word-wrap: break-word;
         }
 
         @keyframes bounce {
@@ -427,6 +429,7 @@
             min-height: 2em;
             text-shadow: 2px 2px 0 rgba(255, 215, 0, 0.3);
             font-weight: 700;
+            word-wrap: break-word;
         }
 
         .enter-btn {
@@ -442,6 +445,7 @@
             font-family: 'Comic Neue', cursive;
             font-weight: 700;
             text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+            max-width: 90%;
         }
 
         .enter-btn:hover {
@@ -467,6 +471,7 @@
             padding-top: calc(20px + env(safe-area-inset-top, 0px));
             padding-bottom: calc(20px + env(safe-area-inset-bottom, 20px));
             text-align: center;
+            overflow-y: auto;
         }
 
         .cake-screen.show {
@@ -589,6 +594,7 @@
             box-shadow: 0 8px 25px rgba(255, 180, 70, 0.6);
             transition: 0.3s;
             display: inline-block;
+            max-width: 90%;
         }
 
         .cake-next-btn:hover {
@@ -614,6 +620,7 @@
             padding: 20px;
             padding-top: calc(20px + env(safe-area-inset-top, 0px));
             padding-bottom: calc(20px + env(safe-area-inset-bottom, 20px));
+            overflow-y: auto;
         }
 
         .reasons-screen.show {
@@ -628,6 +635,7 @@
             margin-bottom: 2rem;
             animation: bounce 1s ease infinite;
             text-align: center;
+            word-wrap: break-word;
         }
 
         .reasons-container {
@@ -667,6 +675,7 @@
             margin-bottom: 1rem;
             font-weight: 600;
             white-space: normal;
+            word-wrap: break-word;
         }
 
         .reason-emoji {
@@ -720,6 +729,7 @@
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
             min-width: 220px;
             font-weight: 700;
+            max-width: 90%;
         }
 
         .reasons-btn:hover {
@@ -767,16 +777,23 @@
         }
 
         .photo-screen.show {
-            display: block;
+            display: flex;
+        }
+
+        .photo-header {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .photo-header h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.2rem;
+            font-size: clamp(2.5rem, 8vw, 3.2rem);
             color: #b0306e;
             text-shadow: 2px 2px 0 gold;
             margin-bottom: 1rem;
             text-align: center;
+            word-wrap: break-word;
         }
 
         .photo-header p {
@@ -788,6 +805,7 @@
             font-weight: 600;
             text-shadow: 1px 1px 0 rgba(255, 215, 0, 0.3);
             text-align: center;
+            word-wrap: break-word;
         }
 
         .photo-container {
@@ -796,6 +814,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
+            width: 100%;
         }
 
         @media (min-width: 600px) {
@@ -863,6 +882,7 @@
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
+            word-wrap: break-word;
         }
 
         .photo-caption {
@@ -870,6 +890,7 @@
             line-height: 1.5;
             color: #2c3e50;
             font-weight: 500;
+            word-wrap: break-word;
         }
 
         .photo-next-btn {
@@ -919,11 +940,12 @@
 
         .video-screen h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 8vw, 3rem);
             color: #c44569;
             text-shadow: 2px 2px 0 gold;
             margin-bottom: 2rem;
             text-align: center;
+            word-wrap: break-word;
         }
 
         .video-container {
@@ -936,6 +958,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 35px;
+            width: 100%;
         }
 
         @media (min-width: 768px) {
@@ -958,6 +981,7 @@
             margin-bottom: 15px;
             text-align: center;
             font-weight: 700;
+            word-wrap: break-word;
         }
 
         .video-wrapper {
@@ -1039,10 +1063,11 @@
 
         .letter-container h2 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 8vw, 3rem);
             color: #c44569;
             margin-bottom: 1.5rem;
             text-shadow: 1px 1px 0 gold;
+            word-wrap: break-word;
         }
 
         .letter-content {
@@ -1051,6 +1076,7 @@
             color: #2c3e50;
             font-weight: 500;
             white-space: pre-line;
+            word-wrap: break-word;
         }
 
         .letter-return-btn {
@@ -1065,6 +1091,7 @@
             font-weight: bold;
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
             transition: 0.3s;
+            max-width: 90%;
         }
 
         .letter-return-btn:hover {
@@ -1155,6 +1182,11 @@
             margin-bottom: 25px;
             text-align: center;
             text-shadow: 1px 1px 0 white;
+            word-wrap: break-word;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
         }
 
         .form-group label {
@@ -1192,6 +1224,7 @@
 
         .form-group textarea {
             height: 110px;
+            border-radius: 20px;
         }
 
         .submit-btn {
@@ -1243,6 +1276,7 @@
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(5px);
             text-shadow: 1px 1px 2px black;
+            word-wrap: break-word;
         }
 
         .social-btn i {
@@ -1354,6 +1388,34 @@
                 padding: 1rem 2rem;
                 font-size: 1.2rem;
             }
+
+            .greeting-screen h1 {
+                font-size: clamp(2.5rem, 9vw, 3.5rem);
+            }
+
+            .greeting-text {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .photo-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .photo-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -1460,18 +1522,18 @@
         </div>
 
         <div class="photo-container">
-            <div class="photo-card" onclick="openLightbox('https://res.cloudinary.com/dpctt0wao/image/upload/v1771773110/RA_Fahim_2025022_fbgoy5.jpg')">
-                <img src="https://res.cloudinary.com/dpctt0wao/image/upload/v1771773110/RA_Fahim_2025022_fbgoy5.jpg" alt="Memory 1" class="photo-img">
+            <div class="photo-card" onclick="openLightbox('https://res.cloudinary.com/dpctt0wao/image/upload/v1781177622/nipvxfqlbdyvxre0kgeh.jpg')">
+                <img src="https://res.cloudinary.com/dpctt0wao/image/upload/v1781177622/nipvxfqlbdyvxre0kgeh.jpg" alt="Memory 1" class="photo-img">
                 <div class="photo-date">Happy birthday</div>
-                <div class="photo-caption">Happiest Birthday Shayan! May Allah bless you with boundless happiness 🌷 ❤️</div>
+                <div class="photo-caption">Happiest Birthday Dst! May Allah bless you with boundless happiness 🌷 ❤️</div>
             </div>
-            <div class="photo-card" onclick="openLightbox('https://res.cloudinary.com/dpctt0wao/image/upload/v1771773071/1690499013509_transcpr_sjigay.jpg')">
-                <img src="https://res.cloudinary.com/dpctt0wao/image/upload/v1771773071/1690499013509_transcpr_sjigay.jpg" alt="Memory 2" class="photo-img">
+            <div class="photo-card" onclick="openLightbox('https://res.cloudinary.com/dpctt0wao/image/upload/v1781177621/zkurg5mhd9imppuneo09.jpg')">
+                <img src="https://res.cloudinary.com/dpctt0wao/image/upload/v1781177621/zkurg5mhd9imppuneo09.jpg" alt="Memory 2" class="photo-img">
                 <div class="photo-date">Together Vibes</div>
                 <div class="photo-caption">May your journey ahead be filled with happiness, success, and endless smiles. 😊💕</div>
             </div>
-            <div class="photo-card" onclick="openLightbox('https://res.cloudinary.com/dpctt0wao/image/upload/v1771773052/Screenshot_2026-02-17_191330_vtahb7.jpg')">
-                <img src="https://res.cloudinary.com/dpctt0wao/image/upload/v1771773052/Screenshot_2026-02-17_191330_vtahb7.jpg" alt="Memory 3" class="photo-img">
+            <div class="photo-card" onclick="openLightbox('https://res.cloudinary.com/dpctt0wao/image/upload/v1781177620/fk197lz4l3arbpfshhfm.jpg')">
+                <img src="https://res.cloudinary.com/dpctt0wao/image/upload/v1781177620/fk197lz4l3arbpfshhfm.jpgpg" alt="Memory 3" class="photo-img">
                 <div class="photo-date">Beautiful Soul</div>
                 <div class="photo-caption">Keep holding onto that old personality of yours, the one that brightens every moment. 🌸💖</div>
             </div>
@@ -1612,10 +1674,10 @@
         });
 
         const CONFIG = {
-            month: 3,
-            day: 26,
+            month: 5,
+            day: 11,
             age: 19,
-            name: "Fatu"
+            name: "Hadi"
         };
 
         const urlParams = new URLSearchParams(window.location.search);
